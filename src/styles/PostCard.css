@@ -1,0 +1,162 @@
+/* ---- Estilo "PseudoTwitter" ---- */
+
+:root {
+    --twitter-blue: #1DA1F2;
+    --twitter-border: #EBEEF0;
+    --twitter-text-gray: #536471;
+    --twitter-text-black: #0F1419;
+    --twitter-hover-blue-bg: rgba(29, 161, 242, 0.1);
+    --twitter-hover-red-bg: rgba(249, 24, 128, 0.1);
+    --twitter-hover-red-text: #F91880;
+    --twitter-hover-green-bg: rgba(0, 186, 124, 0.1);
+    --twitter-hover-green-text: #00BA7C;
+    /* Cor roxa do avatar da imagem de exemplo */
+    --avatar-purple: #794BC4; 
+}
+
+.post {
+    display: flex;
+    gap: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    border: 1px solid var(--twitter-border);
+    padding: 12px 16px;
+    max-width: 600px;
+    margin: 0 auto 4px auto;
+    transition: background-color 0.2s;
+}
+
+.post:hover {
+    background-color: #f7f7f7;
+    cursor: pointer;
+}
+
+/* * 1. Coluna do Avatar (MUDANÇA AQUI) 
+ * Agora estilizamos o próprio div como um círculo
+*/
+.post-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    
+    /* Cor de fundo roxa, como no print */
+    background-color: var(--avatar-purple);
+    color: #ffffff; /* Letra branca */
+
+    /* Flexbox para centralizar a letra perfeitamente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Estilo da letra */
+    font-size: 1.5rem; /* 24px */
+    font-weight: bold;
+    user-select: none; /* Impede que a letra seja selecionada */
+    
+    /* Garante que o div não encolha */
+    flex-shrink: 0; 
+}
+
+/* 2. Coluna do Conteúdo (Sem mudanças) */
+.post-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho (Sem mudanças) */
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.post-display-name {
+    font-weight: bold;
+    color: var(--twitter-text-black);
+}
+.post-display-name:hover {
+    text-decoration: underline;
+}
+
+.post-username, .post-timestamp {
+    color: var(--twitter-text-gray);
+    font-size: 0.95rem;
+}
+
+.post-more-options {
+    margin-left: auto;
+    color: var(--twitter-text-gray);
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 50%;
+}
+.post-more-options:hover {
+    background-color: var(--twitter-hover-blue-bg);
+    color: var(--twitter-blue);
+}
+
+/* Corpo (Sem mudanças) */
+.post-body {
+    color: var(--twitter-text-black);
+    font-size: 1rem;
+    line-height: 1.4;
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
+}
+
+.post-body p {
+    margin: 8px 0 12px 0;
+}
+
+.post-hashtag {
+    color: var(--twitter-blue);
+    cursor: pointer;
+}
+.post-hashtag:hover {
+    text-decoration: underline;
+}
+
+
+/* Rodapé (Sem mudanças, o JSX cuida da lógica) */
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    max-width: 425px;
+    margin-top: 8px;
+    color: var(--twitter-text-gray);
+}
+
+.post-action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 99px; 
+    transition: all 0.2s ease-in-out;
+}
+
+.post-action .action-count {
+    /* O número ao lado do ícone */
+    font-size: 0.9rem;
+}
+
+/* Cores de Hover para as ações */
+.action-reply:hover {
+    color: var(--twitter-blue);
+    background-color: var(--twitter-hover-blue-bg);
+}
+.action-retweet:hover {
+    color: var(--twitter-hover-green-text);
+    background-color: var(--twitter-hover-green-bg);
+}
+.action-like:hover {
+    color: var(--twitter-hover-red-text);
+    background-color: var(--twitter-hover-red-bg);
+}
+.action-share:hover {
+    color: var(--twitter-blue);
+    background-color: var(--twitter-hover-blue-bg);
+}
