@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home"
 import Sidebar from './components/Sidebar';
 import CreatePost from './pages/CreatePost';
+import "../src/styles/App.css"
 
 function App() {
   return (
@@ -12,7 +13,6 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/createpost" element={<CreatePost/>}/>
         </Routes>
-        <CreatePost/>
       </BrowserRouter>
     </div>
   );

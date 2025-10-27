@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom";
 import "../styles/Home.css";
 import PostCard from "../components/PostCard";
 import api from "../services/api"
+import CreatePost from "./CreatePost";
 
 
 function Home(){
@@ -22,6 +23,7 @@ function Home(){
     }, [])
 
     return (
+        <>
         <div className="Home">
             <div className="PostList">
                 {posts.map((post) => {
@@ -39,6 +41,8 @@ function Home(){
                 })}
             </div>
         </div>
+        <CreatePost onCreatePost={(newPost) => setPosts([...posts, newPost])}/>
+        </>
         
     )
 }

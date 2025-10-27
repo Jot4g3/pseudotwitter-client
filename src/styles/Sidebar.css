@@ -1,4 +1,107 @@
-.Sidebar{
+:root {
+    --twitter-blue: #1DA1F2;
+    --twitter-border: #EBEEF0;
+    --twitter-text-gray: #536471;
+    --twitter-text-black: #0F1419;
+    --twitter-hover-light-gray: #f9f3f3d4;
+}
+
+.Sidebar {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--twitter-text-black);
+
+    width: 275px; 
+    height: 100vh;
+    padding: 0 16px;
+    border-right: 1px solid var(--twitter-border);
+    
+    position: sticky;
+    top: 0;
+}
+
+.logo-link {
+    display: inline-block;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    margin: 4px 0 8px 0;
+}
+.logo-link:hover {
+    background-color: var(--twitter-hover-light-gray);
+}
+.logo {
+    width: 40px;
+    height: 30px;
+    display: block;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    
+    text-decoration: none;
+    color: var(--twitter-text-black);
+    
+    font-size: 1.25rem;
+    font-weight: 500;
+    
+    padding: 12px;
+    border-radius: 99px;
+    transition: background-color 0.2s;
+    
+    /* Garante que o link não encolha */
+    width: auto;
+    display: inline-flex; 
+}
+
+.nav-link:hover {
+    background-color: var(--twitter-hover-light-gray);
+}
+
+.nav-link.active {
+    font-weight: 700;
+}
+
+.nav-icon {
+    font-size: 1.5rem;
+}
+
+.nav-text {
+    line-height: 1;
+}
+
+.nav-button-post {
+    background-color: var(--twitter-blue);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    
+    text-decoration: none;
+    text-align: center;
+    
+    border: none;
+    border-radius: 99px;
+    
+    width: 90%;
+    padding: 16px 0;
+    margin-top: 16px;
+    
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.nav-button-post:hover {
+    background-color: #1A91DA;
 }
