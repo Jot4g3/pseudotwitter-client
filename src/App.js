@@ -12,6 +12,7 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/createpost" element={<CreatePost/>}/>
         </Routes>
+        <CreatePost/>
       </BrowserRouter>
     </div>
   );

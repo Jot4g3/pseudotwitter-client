@@ -19,10 +19,14 @@ function CreatePost(){
     });
 
     const onSubmit = (data) => {
-        api.post("/posts", data).then((response) => {
-            console.log(data);
-            console.log("Post adicionado com sucesso.")
-        });
+        try {
+            api.post("/posts", data).then((response) => {
+                console.log(data);
+                console.log("Post adicionado com sucesso.")
+            });
+        } catch (err) {
+            console.log(err)
+        }
     };
 
     return(

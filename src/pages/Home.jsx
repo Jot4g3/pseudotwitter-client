@@ -11,10 +11,14 @@ function Home(){
     const navigate = useNavigate();
 
     useEffect(() => {
-        api.get("/posts").then((response) => {
-            console.log(response.data);
-            setPosts(response.data)
-        });
+        try {
+            api.get("/posts").then((response) => {
+                console.log(response.data);
+                setPosts(response.data);
+            });
+        } catch (err) {
+            console.log(err);
+        }
     }, [])
 
     return (

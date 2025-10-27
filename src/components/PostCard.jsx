@@ -1,17 +1,29 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "../styles/PostCard.css"
 
 const parseTextWithHashtags = (text) => {
-    const hashtagRegex = /#\w+/g;
-    const parts = text.split(new RegExp(`(${hashtagRegex.source})`, 'g'));
+    if (!text) return text || "";
+
+    // aceita letras/numeração Unicode (acentos, outros alfabetos) e underscores
+    const hashtagRegex = /\B#([\p{L}\p{N}_]+)/gu;
+    const parts = text.split(new RegExp(`(${hashtagRegex.source})`, 'gu'));
 
     return parts.map((part, index) => {
-        if (part.match(hashtagRegex)) {
-            return <span key={index} className="post-hashtag">{part}</span>;
+        if (!part) return <React.Fragment key={index} />;
+        // valida de forma simples se começa com #
+        if (part.charAt(0) === "#") {
+            return (
+                <span key={index} className="post-hashtag">
+                    {part}
+                </span>
+            );
         }
-        return part;
+        // envolver o texto em Fragment com key para evitar warnings
+        return <React.Fragment key={index}>{part}</React.Fragment>;
     });
 };
+
 
 function PostCard({ 
     id, 
