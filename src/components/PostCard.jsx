@@ -32,7 +32,8 @@ function PostCard({
     username, 
     isClickable, 
     isIndividual,
-    commentCount, 
+    commentCount,
+    createdAt
 }) {
     
     const navigate = useNavigate();
@@ -59,7 +60,7 @@ function PostCard({
                 <div className="post-header">
                     <span className="post-display-name">{title}</span>
                     <span className="post-username">@{username}</span>
-                    <span className="post-timestamp">TEMPO</span>
+                    <span className="post-timestamp">{createdAt}</span>
                     
                     <div className="post-more-options">
                         <span>v</span>

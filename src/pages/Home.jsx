@@ -4,7 +4,7 @@ import "../styles/Home.css";
 import PostCard from "../components/PostCard";
 import api from "../services/api"
 import CreatePost from "./CreatePost";
-
+import timeAfterPost from "../util/timeAfterPost"
 
 function Home(){
     const [posts, setPosts] = useState([]);
@@ -12,14 +12,13 @@ function Home(){
     const navigate = useNavigate();
 
     useEffect(() => {
-        try {
-            api.get("/posts").then((response) => {
-                console.log(response.data);
-                setPosts(response.data);
-            });
-        } catch (err) {
-            console.log(err);
-        }
+        api.get("/posts").then((response) => {
+            console.log(response.data);
+            setPosts(response.data);
+        }).catch((err) => {
+            console.log(err)
+        });
+        
     }, [])
 
     return (
@@ -36,6 +35,7 @@ function Home(){
                             isClickable={true}
                             isIndividual={false}
                             commentCount={post.commentCount}
+                            createdAt={timeAfterPost(post.createdAt)}
                         />
                     );
                 })}
