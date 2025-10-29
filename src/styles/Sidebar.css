@@ -105,3 +105,7 @@
 .nav-button-post:hover {
     background-color: #1A91DA;
 }
+
+.btn-login {
+    margin-bottom: 16px;
+}

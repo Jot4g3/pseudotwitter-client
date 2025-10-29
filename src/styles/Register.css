@@ -1,0 +1,114 @@
+:root {
+    --twitter-blue: #1DA1F2;
+    --twitter-border: #EBEEF0;
+    --twitter-text-gray: #536471;
+    --twitter-text-black: #0F1419;
+    --twitter-error-red: #F4212E;
+}
+
+.Register {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 450px;
+    margin: 60px auto;
+    background-color: #ffffff;
+    border: 1px solid var(--twitter-border);
+    border-radius: 16px;
+    padding: 24px 32px;
+}
+
+.Register .Form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.Register .Form h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--twitter-text-black);
+    margin: 0 0 24px 0;
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--twitter-text-gray);
+    margin-bottom: 4px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 12px;
+    border: 1px solid #CFD9DE;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--twitter-text-black);
+    background-color: #ffffff;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--twitter-blue);
+    box-shadow: 0 0 0 1px var(--twitter-blue);
+}
+
+.form-input::placeholder {
+    color: var(--twitter-text-gray);
+    opacity: 0.8;
+}
+
+.form-error {
+    color: var(--twitter-error-red);
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+.register-error-container {
+    color: var(--twitter-error-red);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 12px;
+    border: 1px solid var(--twitter-error-red);
+    background-color: rgba(244, 33, 46, 0.1);
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.Register .Form button[type="submit"] {
+    background-color: var(--twitter-blue);
+    color: #ffffff;
+    border: none;
+    border-radius: 99px;
+    padding: 14px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 12px;
+}
+
+.Register .Form button[type="submit"]:hover {
+    background-color: #1A91DA;
+}
+
+.Register .Form button[type="submit"]:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.link{
+    color: #1A91DA;
+    font-size: medium;
+    text-decoration: none;
+}
