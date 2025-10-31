@@ -33,7 +33,9 @@ function IndividualPost() {
                 isIndividual={true}
                 commentCount={post.commentCount}
                 createdAt={timeAfterPost(post.createdAt)}
-            /> : <Loader/>}
+            /> 
+            : <Loader size={50}/>
+            }
         </>
 
     );

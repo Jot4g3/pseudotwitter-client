@@ -1,9 +1,9 @@
 import { ClipLoader } from "react-spinners";
 
-function Loader() {
+function Loader({size}) {
   return (
     <div style={{ display: "flex", justifyContent: "center", marginTop: "50px" }}>
-      <ClipLoader color="#3498db" size={50} />
+      <ClipLoader color="#3498db" size={size} />
     </div>
   );
 }

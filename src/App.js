@@ -6,6 +6,8 @@ import IndividualPost from './pages/IndividualPost';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import "./styles/App.css"
+import Loader from './components/Loader';
+import PostCardLoading from './components/PostCardLoading';
 
 
 function App() {

@@ -1,11 +1,14 @@
 .Home{
     padding: 16px;
+    width: 65%;
+    display: flex;
 }
 
 .PostList {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     flex: 1;
-    max-width: 100vh;
+    width: 100%;
 }
+
