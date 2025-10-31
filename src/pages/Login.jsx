@@ -23,10 +23,8 @@ function Login() {
     const onSubmit = async (data, { resetForm }) => {
         setErrorMessage(null);
         try {
-            const response = await api.post("/users/login", data);
-            localStorage.setItem("accessToken", response.data.token);
-            localStorage.setItem("username", response.data.username);
-            console.log("Login com sucesso:", response.data);
+            const response = await api.post("/users/login", data); // O cookie é enviado automaticamente na requisição.
+            console.log("Login com sucesso: ", response.data);
             navigate("/");
         } catch (err) {
             console.log(err);

@@ -109,3 +109,11 @@
 .btn-login {
     margin-bottom: 16px;
 }
+
+.sidebar-bottom{
+    margin-top: auto;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}

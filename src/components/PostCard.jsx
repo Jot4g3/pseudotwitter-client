@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/PostCard.css"
+import "../styles/PostCard.css";
+import getAvatarLetter from "../util/getAvatarLetter";
 
 const parseTextWithHashtags = (text) => {
     if (!text) return text || "";
@@ -37,20 +38,17 @@ function PostCard({
 }) {
     
     const navigate = useNavigate();
-
-    const avatarLetter = username?.charAt(0).toUpperCase() || "?";
+    const safeUsername = username || "unknown";
 
     return (
         <div
-            key={id}
-            className="post"
+            className={`post ${isIndividual ? "post-individual" : ""}`}
             onClick={isClickable ? () => navigate(`/post/${id}`) : undefined}
-            id={isIndividual ? "individual" : undefined}
         >
             {/* 1. Coluna do Avatar (AGORA COM A LETRA) */}
             <div className="post-avatar">
                 {/* Renderiza a primeira letra do username */}
-                <span>{avatarLetter}</span>
+                <span>{getAvatarLetter(safeUsername)}</span>
             </div>
 
             {/* 2. Coluna do Conteúdo (Header, Body, Footer) */}
@@ -58,8 +56,8 @@ function PostCard({
                 
                 {/* Cabeçalho: Nome, @username, tempo */}
                 <div className="post-header">
+                    <span className="post-username">@{safeUsername}</span>
                     <span className="post-display-name">{title}</span>
-                    <span className="post-username">@{username}</span>
                     <span className="post-timestamp">{createdAt}</span>
                     
                     <div className="post-more-options">

@@ -6,9 +6,14 @@ import api from "../services/api";
 import CreatePost from "./CreatePost";
 import timeAfterPost from "../util/timeAfterPost";
 import PostCardLoading from "../components/PostCardLoading";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
+
 
 function Home() {
-    const [posts, setPosts] = useState(null);
+    const { user } = useContext(UserContext);
+    const [loadedPosts, setLoadedPosts] = useState(false);
+    const [posts, setPosts] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -17,6 +22,7 @@ function Home() {
             .then((response) => {
                 console.log(response.data);
                 setPosts(response.data);
+                setLoadedPosts(true)
             })
             .catch((err) => {
                 console.log(err);
@@ -25,7 +31,7 @@ function Home() {
 
     return (
         <>
-            {posts ? (
+            {loadedPosts ? (
                 <>
                     <div className="Home">
                         <div className="PostList">
@@ -35,7 +41,7 @@ function Home() {
                                     id={post.id}
                                     title={post.title}
                                     text={post.text}
-                                    username={post.username}
+                                    username={post.user.username}
                                     isClickable={true}
                                     isIndividual={false}
                                     commentCount={post.commentCount}
@@ -44,7 +50,7 @@ function Home() {
                             ))}
                         </div>
                     </div>
-                    <CreatePost onCreatePost={(newPost) => setPosts(...posts, newPost)} />
+                    <CreatePost onCreatePost={(newPost) => setPosts([newPost, ...posts])} user={user}/>
                 </>
             ) : (
                 <>
@@ -58,7 +64,7 @@ function Home() {
                             <PostCardLoading/>
                         </div>
                     </div>
-                    <CreatePost onCreatePost={() => {}} />
+                    <CreatePost onCreatePost={() => {}}/>
                 </>
             )}
         </>

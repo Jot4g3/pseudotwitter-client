@@ -8,9 +8,23 @@ import Register from './pages/Register';
 import "./styles/App.css"
 import Loader from './components/Loader';
 import PostCardLoading from './components/PostCardLoading';
+import { useEffect, useState } from 'react';
+import { getLoggedUser } from './services/api';
 
 
 function App() {
+
+  const [user, setUser] = useState();
+  
+  useEffect(() => {
+    const fetchUser = async () => {
+      const u = await getLoggedUser();
+      setUser(u);
+    };
+
+    fetchUser();
+  }, [])
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -18,7 +32,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/post/:id" element={<IndividualPost/>}/>
-          <Route path="/createpost" element={<CreatePost/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/register' element={<Register/>}/>
         </Routes>
