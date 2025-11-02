@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import "../styles/Home.css";
 import PostCard from "../components/PostCard";
+import Sidebar from "../components/Sidebar";
 import api from "../services/api";
-import CreatePost from "./CreatePost";
+import CreatePost from "../components/CreatePost";
 import timeAfterPost from "../util/timeAfterPost";
 import PostCardLoading from "../components/PostCardLoading";
 import { useContext } from "react";
@@ -14,7 +14,6 @@ function Home() {
     const { user } = useContext(UserContext);
     const [loadedPosts, setLoadedPosts] = useState(false);
     const [posts, setPosts] = useState([]);
-    const navigate = useNavigate();
 
     useEffect(() => {
         api
@@ -33,6 +32,7 @@ function Home() {
         <>
             {loadedPosts ? (
                 <>
+                    <Sidebar/>
                     <div className="Home">
                         <div className="PostList">
                             {posts.map((post) => (
@@ -54,6 +54,7 @@ function Home() {
                 </>
             ) : (
                 <>
+                    <Sidebar/>
                     <div className="Home">
                         <div className="PostList">
                             <PostCardLoading/>

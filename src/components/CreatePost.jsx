@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useContext } from "react";
+import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import api from "../services/api";
 import "../styles/CreatePost.css";
 import { useNavigate } from "react-router-dom";
-import Loader from "../components/Loader";
+import Loader from "./Loader";
 
 
 function CreatePost({ onCreatePost}) {

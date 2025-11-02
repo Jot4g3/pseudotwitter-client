@@ -1,0 +1,21 @@
+.individual-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.individual-container > .post {
+    flex-basis: 40%;
+    flex-shrink: 0;
+    
+    border-right: 1px solid var(--twitter-border);
+}
+
+.individual-container > .comments-sidebar {
+    flex-basis: 60%;
+    flex-shrink: 0;
+    
+    height: 100vh;
+    overflow-y: auto;
+}

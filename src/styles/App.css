@@ -1,3 +1,11 @@
+:root {
+    --twitter-blue: #1DA1F2;
+    --twitter-border: #EBEEF0;
+    --twitter-text-gray: #536471;
+    --twitter-text-black: #0F1419;
+    --twitter-error-red: #F4212E;
+}
+
 .App{
     display: flex;
     flex-direction: row;

@@ -1,4 +1,5 @@
-import React, { use } from 'react';
+// FALTA FAZER LOGOUT
+
 import '../styles/UserProfileChip.css';
 import getAvatarLetter from '../util/getAvatarLetter';
 import { Link } from 'react-router-dom';

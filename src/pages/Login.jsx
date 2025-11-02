@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import { useContext, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 import "../styles/Login.css"; 
 import { Link } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
 
 function Login() {
     const [errorMessage, setErrorMessage] = useState(null);
     const navigate = useNavigate();
+
+    const { setUser } = useContext(UserContext);
 
     const initialValues = {
         username: "",
@@ -25,6 +28,7 @@ function Login() {
         try {
             const response = await api.post("/users/login", data); // O cookie é enviado automaticamente na requisição.
             console.log("Login com sucesso: ", response.data);
+            setUser(response.data);
             navigate("/");
         } catch (err) {
             console.log(err);
