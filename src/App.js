@@ -3,6 +3,7 @@ import Home from "./pages/Home"
 import IndividualPost from './pages/IndividualPost';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Logout from "./pages/Logout"
 import "./styles/App.css"
 import { useEffect, useState } from 'react';
 import { getLoggedUser } from './services/api';
@@ -29,6 +30,7 @@ function App() {
           <Route path="/post/:id" element={<IndividualPost/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/register' element={<Register/>}/>
+          <Route path='/logout' element={<Logout/>}/>
         </Routes>
       </BrowserRouter>
     </div>

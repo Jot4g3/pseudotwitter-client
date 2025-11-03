@@ -19,8 +19,8 @@ function CreatePost({ onCreatePost}) {
     };
 
     const validationSchema = Yup.object().shape({
-        title: Yup.string().required("Digite um título"),
-        text: Yup.string().required("Digite um conteúdo"),
+        title: Yup.string().max(80, "Máximo de 80 caracteres").required("Título é obrigatório"),
+        text: Yup.string().max(1000, "Máximo de 1000 caracteres").required("Conteúdo é obrigatório"),
     });
 
     const onSubmit = async (data, { resetForm }) => {

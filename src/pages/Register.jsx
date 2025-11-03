@@ -16,8 +16,8 @@ function Register() {
     };
 
     const validationSchema = Yup.object().shape({
-        username: Yup.string().min(3).max(15).required("Nome de usuário é obrigatório"),
-        password: Yup.string().min(4).required("Senha é obrigatória"),
+        username: Yup.string().min(3, "Mínimo de 3 caracteres").max(20, "Máximo de 20 caracteres").required("Nome de usuário é obrigatório"),
+        password: Yup.string().min(6, "Mínimo de 6 caracteres").max(40, "Máximo de 40 caracteres").required("Senha é obrigatória"),
     });
 
     const onSubmit = async (data, { resetForm }) => {

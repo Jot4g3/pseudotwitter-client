@@ -23,13 +23,11 @@ function Sidebar() {
             </nav>
 
             <div className="sidebar-bottom">
-                <Link to="/createpost" className="nav-button-post">
-                    Postar
-                </Link>
-
                 {
                 user ? (
-                <UserProfileChip username={user.username}/> 
+                <Link to="/logout" className="link">
+                    <UserProfileChip username={user.username}/> 
+                </Link>
                 ) : (
                 <Link to="/login" className="nav-button-post btn-login">
                     Quero logar
