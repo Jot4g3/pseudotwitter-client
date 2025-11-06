@@ -102,7 +102,8 @@ O secret é a "chave" (senha) que o express-session usa para assinar e proteger 
 npm start
 ```
 
-# O servidor estará rodando em http://localhost:3001
+  
+O servidor estará rodando em http://localhost:3001
 
 ### 2. Frontend (Cliente)
 
@@ -121,5 +122,6 @@ npm i
 ```bash
 npm start
 ```
-
-# O aplicativo será aberto em http://localhost:3000
+  
+  
+O aplicativo será aberto em http://localhost:3000
