@@ -2,7 +2,7 @@
 
 Este é o repositório do **frontend** do projeto PseudoTwitter, uma aplicação full-stack que simula as funcionalidades principais do Twitter. O projeto foi desenvolvido para a disciplina de Programação Web II em outubro/novembro de 2025.
 
-O **backend** correspondente, construído utilizando Node.js e Express, pode ser encontrado em [PseudoTwitter-Server](github.com/Jot4g3/pseudotwitter-server).
+O **backend** correspondente, construído utilizando Node.js e Express, pode ser encontrado em [PseudoTwitter-Server](https://github.com/Jot4g3/pseudotwitter-server).
 
 ## Funcionalidades Principais 
 
