@@ -30,7 +30,7 @@ O principal componente do site.
     * **Esquerda:** O PostCard individual, com mais detalhes e formatação maior.
     * **Direita:** A seção de comentários, que permite ao usuário ler todos os comentários daquele post e enviar novos.
 
-## 🛠️ Tecnologias e Bibliotecas Utilizadas
+## Tecnologias e Bibliotecas Utilizadas
 
 ### Frontend
 * **React:** Biblioteca principal para a construção da interface de usuário. `useState()` `useEffect()`
@@ -48,7 +48,7 @@ O principal componente do site.
 * **Bcrypt:** Para hasheamento e segurança de senhas.
 * **CORS:** Para permitir a comunicação entre o frontend (localhost:3000) e o backend (localhost:3001).
 
-## 🧠 Conceitos de Programação Aplicados
+## Conceitos de Programação Aplicados
 
 * **Arquitetura Full Stack:** Separação clara de responsabilidades entre um frontend (React) e um backend (API Express).
 * **API RESTful:** Criação de endpoints (`GET`, `POST`) para manipular recursos (Usuários, Posts, Comentários). Veja o [backend](https://github.com/Jot4g3/pseudotwitter-server).
@@ -59,7 +59,7 @@ O principal componente do site.
 * **Validação de Formulários:** Aplicação de regras de validação robustas com `Yup` antes de enviar dados ao servidor.
 * **Relações de Banco de Dados (ORM):** Mapeamento de associações do Sequelize (`hasMany`, `belongsTo`) para conectar Usuários, Posts e Comentários.
 
-## 🏃 Como Executar o Projeto
+## Como Executar o Projeto
 
 Para rodar este projeto, você precisará ter o **backend (servidor)** e o **frontend (cliente)** rodando simultaneamente em terminais separados.
 
