@@ -51,7 +51,7 @@ O principal componente do site.
 ## 🧠 Conceitos de Programação Aplicados
 
 * **Arquitetura Full Stack:** Separação clara de responsabilidades entre um frontend (React) e um backend (API Express).
-* **API RESTful:** Criação de endpoints (`GET`, `POST`) para manipular recursos (Usuários, Posts, Comentários). Veja o [backend](github.com/Jot4g3/pseudotwitter-server).
+* **API RESTful:** Criação de endpoints (`GET`, `POST`) para manipular recursos (Usuários, Posts, Comentários). Veja o [backend](https://github.com/Jot4g3/pseudotwitter-server).
 * **Autenticação baseada em Sessão:** Uso de cookies (`httpOnly`) e `express-session` para gerenciar o estado de login do usuário de forma segura.
 * **Gerenciamento de Estado (React):** Uso de `useState`, `useEffect`.
 * **Roteamento:** Utilização de `react-router-dom` no cliente e `express.Router()` no servidor.
